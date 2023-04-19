@@ -1,0 +1,6 @@
+plugin:
+    name: 'summer.login::lang.plugin.name'
+    description: 'summer.login::lang.plugin.description'
+    author: Summer CMS
+    icon: wn-icon-slack
+    replaces: {  }

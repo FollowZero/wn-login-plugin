@@ -1,0 +1,15 @@
+{
+    "name": "followzero/wn-login-plugin",
+    "type": "winter-plugin",
+    "description": "login Winter CMS plugin",
+    "keywords": ["winter", "cms", "login", "plugin"],
+    "license": "MIT",
+    "homepage": "https://github.com/followzero/wn-login-plugin",
+    "authors": [
+        {
+            "name": "Summer CMS",
+            "email": "oct38577145@gmail.com",
+            "role": "Developer"
+        }
+    ]
+}
