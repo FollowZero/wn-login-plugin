@@ -17,9 +17,6 @@ class Settings extends Model
     public $settingsFields = 'fields.yaml';
 
     public function getActiveSkinOptions(){
-//        $loggedIn = BackendAuth::check();
-//dd($loggedIn);
-
         $skins_arr=[];
         $skins=Skin::all();
         foreach ($skins as $skin){

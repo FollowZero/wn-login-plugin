@@ -1,7 +1,7 @@
 {
-    "name": "followzero/wn-login-plugin",
+    "name": "summer/wn-login-plugin",
     "type": "winter-plugin",
-    "description": "login Winter CMS plugin",
+    "description": "Winter CMS backend login skins plugin",
     "keywords": ["winter", "cms", "login", "plugin"],
     "license": "MIT",
     "homepage": "https://github.com/followzero/wn-login-plugin",
