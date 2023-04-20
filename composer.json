@@ -1,5 +1,5 @@
 {
-    "name": "summercms/wn-login-plugin",
+    "name": "summer/wn-login-plugin",
     "type": "winter-plugin",
     "description": "Winter CMS backend login skins plugin",
     "keywords": ["winter", "cms", "login", "plugin"],
