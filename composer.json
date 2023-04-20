@@ -1,6 +1,6 @@
 {
     "name": "summercms/wn-login-plugin",
-    "vendor-alias": "summer",
+    "vendor": "summer",
     "type": "winter-plugin",
     "description": "Winter CMS backend login skins plugin",
     "keywords": ["winter", "cms", "login", "plugin"],
