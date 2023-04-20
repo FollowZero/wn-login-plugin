@@ -13,6 +13,10 @@
         }
     ],
     "extra": {
-        "installer-name": "builder"
+        "winter": {
+            "alias": [
+                "AuthorName\\PluginName\\": "summer/wn-login-plugin"
+            ]
+        }
     }
 }
