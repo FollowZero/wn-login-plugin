@@ -1,5 +1,6 @@
 {
     "name": "summercms/wn-login-plugin",
+    "vendor-alias": "summer",
     "type": "winter-plugin",
     "description": "Winter CMS backend login skins plugin",
     "keywords": ["winter", "cms", "login", "plugin"],
@@ -11,14 +12,5 @@
             "email": "oct38577145@gmail.com",
             "role": "Developer"
         }
-    ],
-    "extra": {
-        "winter": {
-            "alias": [
-                {
-                    "AuthorName\\PluginName\\" : "summer/wn-login-plugin"
-                }
-            ]
-        }
-    }
+    ]
 }
