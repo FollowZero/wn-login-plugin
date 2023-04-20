@@ -15,7 +15,7 @@
     ],
     "extra": {
         "installer-paths": {
-            "summercms/wn-login-plugin":"summer"
+            "summercms/wn-login-plugin":["plugins/summer/login"]
         }
     }
 }
