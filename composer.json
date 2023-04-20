@@ -15,7 +15,9 @@
     "extra": {
         "winter": {
             "alias": [
-                "AuthorName\\PluginName\\": "summer/wn-login-plugin"
+                {
+                    "AuthorName\\PluginName\\" : "summer/wn-login-plugin"
+                }
             ]
         }
     }
