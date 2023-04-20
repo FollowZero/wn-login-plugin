@@ -14,8 +14,12 @@
         }
     ],
     "extra": {
-        "installer-paths": {
-            "summercms/wn-login-plugin":["plugins/summer/login"]
+        "winter": {
+            "plugin": {
+                "name": "summercms/wn-login-plugin",
+                "code": "Summercms.Login",
+                "directory": "custom_plugins"
+            }
         }
     }
 }
