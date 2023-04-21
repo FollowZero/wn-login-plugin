@@ -1,6 +1,5 @@
 {
     "name": "summercms/wn-login-plugin",
-    "vendor": "summer",
     "type": "winter-plugin",
     "description": "Winter CMS backend login skins plugin",
     "keywords": ["winter", "cms", "login", "plugin"],
@@ -12,10 +11,5 @@
             "email": "oct38577145@gmail.com",
             "role": "Developer"
         }
-    ],
-    "extra": {
-        "installer-paths": {
-            "summercms/wn-login-plugin":"plugins/summer/login"
-        }
-    }
+    ]
 }
