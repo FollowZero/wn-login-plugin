@@ -1,11 +1,14 @@
 <?php namespace Summer\Login;
 
+use Cms\Classes\Theme;
 use File;
+use Backend;
 use Config;
 use Request;
 use System\Classes\PluginBase;
 use Backend\Controllers\Auth as AuthController;
 use Summer\Login\Models\Settings as LoginSteeings;
+use Summer\Login\Classes\Skin as LoginSkinClass;
 
 
 class Plugin extends PluginBase
@@ -23,6 +26,14 @@ class Plugin extends PluginBase
                 'category'    => 'Summer',
                 'icon'        => 'icon-sign-in',
                 'class'       => 'Summer\Login\Models\Settings',
+                'order'       => 600,
+            ],
+            'skins' => [
+                'label'       => '登录皮肤',
+                'description' => '登录皮肤',
+                'category'    => 'Summer',
+                'icon'        => 'icon-sign-in',
+                'url'         => Backend::url('summer/login/skins'),
                 'order'       => 600,
             ]
         ];
@@ -47,17 +58,23 @@ class Plugin extends PluginBase
      */
     protected function applyBackendSkin()
     {
-        $activeSkin=LoginSteeings::get('active_skin');
+        $activeSkin=LoginSkinClass::getActiveSkin();
+        $activeSkinName=$activeSkin->getDirName();
         //设置登录皮肤类
         Config::set('cms.backendSkin', \Summer\Login\Skins\LoginSkin::class);
         //设置背景图片
-        if (File::exists(plugins_path('/summer/login/skins').'/'.$activeSkin.'/assets/img/background.png')) {
-            Config::set('brand.backgroundImage', '/plugins/summer/login/skins/'.$activeSkin.'/assets/img/background.png');
+        //判断该主题是否有自定义背景图片的属性
+        if($activeSkin->backgroundImage){
+            $backgroundImagePath=$activeSkin->backgroundImage->path;
+        }else{
+            //默认背景图片
+            $backgroundImagePath=url('/plugins/summer/login/skins'.'/'.$activeSkinName.'/assets/img/background.png');
         }
+        Config::set('brand.backgroundImage', $backgroundImagePath);
         //设置logo图片
         if (empty(Config::get('brand.logoPath'))) {
-            if (File::exists(plugins_path('/summer/login/skins').'/'.$activeSkin.'/assets/img/logo.png')) {
-                Config::set('brand.logoPath', '/plugins/summer/login/skins/'.$activeSkin.'/assets/img/logo.png');
+            if (File::exists(plugins_path('/summer/login/skins').'/'.$activeSkinName.'/assets/img/logo.png')) {
+                Config::set('brand.logoPath', '/plugins/summer/login/skins/'.$activeSkinName.'/assets/img/logo.png');
             }
         }
     }
@@ -65,9 +82,10 @@ class Plugin extends PluginBase
     {
         AuthController::extend(function ($controller) {
             $controller->bindEvent('page.beforeDisplay', function () use ($controller) {
-                $activeSkin=LoginSteeings::get('active_skin');
+                $activeSkin=LoginSkinClass::getActiveSkin();
+                $activeSkinName=$activeSkin->getDirName();
                 //根据选中的皮肤设置模版路径
-                $controller->addViewPath('$/summer/login/skins/'.$activeSkin.'/pages');
+                $controller->addViewPath('$/summer/login/skins/'.$activeSkinName.'/pages');
             });
         });
     }

@@ -1,3 +1,7 @@
+<?php
+use Summer\Login\Classes\Skin as LoginSkinClass;
+$activeSkin=LoginSkinClass::getActiveSkin();
+?>
 <!DOCTYPE html>
 <html lang="<?= App::getLocale() ?>">
 <head>
@@ -12,15 +16,15 @@
 <body>
 <div class="relative min-h-screen flex">
     <div class="flex flex-col sm:flex-row items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0 bg-white">
-        <div style="background-image: url(<?= Url::asset('/plugins/summer/login/skins/tailwindone/assets/img/img.jpg'); ?>)" class="sm:w-1/2 xl:w-3/5 h-full hidden md:flex flex-auto items-center justify-center p-10 overflow-hidden bg-purple-900 text-white bg-no-repeat bg-cover relative">
+        <div style="background-image: url('<?= e(config('brand.backgroundImage')); ?>')" class="sm:w-1/2 xl:w-3/5 h-full hidden md:flex flex-auto items-center justify-center p-10 overflow-hidden bg-purple-900 text-white bg-no-repeat bg-cover relative">
             <div class="absolute bg-gradient-to-b from-indigo-600 to-blue-500 opacity-75 inset-0 z-0">
             </div>
             <div class="w-full max-w-md z-10">
                 <div class="sm:text-4xl xl:text-5xl font-bold leading-tight mb-6">
-                    <?= e(Backend\Models\BrandSetting::get('app_name')) ?>
+                    <?= $activeSkin->name ?>
                 </div>
                 <div class="sm:text-sm xl:text-md text-gray-200 font-normal">
-                    <?= e(Backend\Models\BrandSetting::get('app_tagline')); ?>
+                    <?= $activeSkin->tagline ?>
                 </div>
             </div>
             <ul class="circles">

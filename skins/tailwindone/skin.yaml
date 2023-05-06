@@ -1,5 +1,6 @@
 name: Tailwind主题一
-description: 'Tailwind主题一'
+description: 'Tailwind主题一.'
 author: Summer CMS
 homepage: 'https://www.summercms.com'
 code: ''
+form: config/fields.yaml

@@ -1,0 +1,21 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: summer.login::lang.skin.skin_label
+
+# Fields are defined by extension
+form: []
+
+# Model Class name
+modelClass: Summer\Login\Models\LoginSkinDataModel
+
+# Default redirect location
+defaultRedirect: summer/login/skins
+
+# Update page
+update:
+    title: summer.login::lang.skin.customize_skin
+    redirect: summer/login/skins
+    redirectClose: summer/login/skins

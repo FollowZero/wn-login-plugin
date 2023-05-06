@@ -2,23 +2,8 @@
 自定义选择后台登录主题
 
 ## 安装
-由于包名的原因需要在项目根目录的 composer.json 文件中添加有自定义安装路径的代码
-``` 
-.
-.
-.
-"extra": {
-        "installer-paths": {
-            "plugins/summer/{$name}/": ["vendor:summercms"]
-        }
-    }
-.
-.
-.
 ```
-
-```
-composer require summercms/wn-login-plugin
+composer require summer/wn-login-plugin
 ```
 
 ## 使用
@@ -32,7 +17,7 @@ composer require summercms/wn-login-plugin
 当前版本1.0.1提供了两款皮肤，可供选择。可自己扩展主题。
 
 ### 登录主题皮肤目录
-``` 
+```
 skins/tailwindone
 ├─assets //资源文件夹
 │  ├─css //css资源文件夹
@@ -50,10 +35,10 @@ skins/tailwindone
 ```
 
 ### skin.yaml 文件说明
-``` 
+```
 name: Tailwind主题一 //主题名称
 description: 'Tailwind主题一' //主题介绍
-author: Summer CMS 
+author: Summer CMS
 homepage: 'https://www.summercms.com'
 code: ''
 ```
@@ -67,20 +52,20 @@ code: ''
 
 像前端主题那样,可以自定义主题，写好的登录主题放到skins文件夹，就能作为一个主题让选择。//已实现。参考 Cms\Classes\Theme 写的 Summer\Login\Classes\Skin
 
-每个主题有自己的属性，有通用属性，如背景图片，按钮颜色。也有特有属性，如有的有飘浮物，额外的标语口号。//未实现
+每个主题有自己的属性，有通用属性，如背景图片，按钮颜色。也有特有属性，如有的有飘浮物，额外的标语口号。//v2版本，已实现
 
-因为结构和颜色的不同，有可能背景图片的大小，logo的颜色需要单独设置。就需要能整体设置也需要每个主题能单独设置。没有单独设置的默认整体的设置。//未实现
+因为结构和颜色的不同，有可能背景图片的大小，logo的颜色需要单独设置。就需要能整体设置也需要每个主题能单独设置。没有单独设置的默认整体的设置。//v2版本，已实现
 
 主要参考 [wn-tailwindui-plugin](https://github.com/wintercms/wn-tailwindui-plugin) 这个后台皮肤的插件。其中包含了后台登录的页面。为了不与这个插件有冲突，只有在
-'backend/backend/auth/*' 的路由页面下才单独继承 BackendSkin 类。之前想着用是否后台登录去做判断。但是是不管用的，应该是因为插件定义了 [$elevated](https://wintercms.com/docs/plugin/registration#elevated-plugin) 
+'backend/backend/auth/*' 的路由页面下才单独继承 BackendSkin 类。之前想着用是否后台登录去做判断。但是是不管用的，应该是因为插件定义了 [$elevated](https://wintercms.com/docs/plugin/registration#elevated-plugin)
 属性为 true ,权限优先级提升了。
 
 登录主题的选择用的是表单的下拉菜单 [Dropdown](https://wintercms.com/docs/backend/forms#field-dropdown) 她支持添加图标或图片。配合这表单字段选项中的 cssClass ，可自定义css样式。
 但是用的是 Plugin Settings 我暂时不知道如何添加css文件，就用表单的 partial 把用到的css写到了对应的部分里
-``` 
+```
 fields:
-    dropdownimg: 
-        type: partial 
+    dropdownimg:
+        type: partial
         path: ~/plugins/summer/login/models/settings/_dropdownimg.htm //css样式暂时写到这个部分里
     active_skin:
         label: summer.login::lang.form.active_skin
@@ -88,5 +73,6 @@ fields:
         span: full
         type: dropdown
 ```
+
 
 

@@ -1,0 +1,15 @@
+fields:
+    name:
+        label: 标题
+        type: text
+        comment: '左侧标题，可单独设置，未设置默认网站标题'
+    tagline:
+        label: 标语
+        type: text
+        comment: '左侧标语，可单独设置，未设置默认网站标语'
+    backgroundImage:
+        label: 背景图片
+        mode: image
+        type: fileupload
+        comment: '推荐尺寸:1950*1300'
+
