@@ -22,15 +22,15 @@ class Plugin extends PluginBase
         return [
             'settings' => [
                 'label'       => '登录主题',
-                'description' => '登录主题',
+                'description' => '登录主题设置',
                 'category'    => 'Summer',
                 'icon'        => 'icon-sign-in',
                 'class'       => 'Summer\Login\Models\Settings',
                 'order'       => 600,
             ],
             'skins' => [
-                'label'       => '登录皮肤',
-                'description' => '登录皮肤',
+                'label'       => '登录主题',
+                'description' => '登录主题选择',
                 'category'    => 'Summer',
                 'icon'        => 'icon-sign-in',
                 'url'         => Backend::url('summer/login/skins'),

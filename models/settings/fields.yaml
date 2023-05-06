@@ -1,14 +1,7 @@
 fields:
-    dropdownimg:
-        type: partial
-        path: ~/plugins/summer/login/models/settings/_dropdownimg.htm
     enabled_skin:
         label: summer.login::lang.form.enabled_skin
         type: switch
         default: false
-    active_skin:
-        label: summer.login::lang.form.active_skin
-        cssClass: dropdownimg
-        span: full
-        type: dropdown
+
 
