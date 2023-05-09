@@ -2,8 +2,24 @@
 自定义选择后台登录主题
 
 ## 安装
+
+由于包名的原因需要在项目根目录的 composer.json 文件中添加有自定义安装路径的代码
+``` 
+.
+.
+.
+"extra": {
+        "installer-paths": {
+            "plugins/summer/{$name}/": ["vendor:summercms"]
+        }
+    }
+.
+.
+.
 ```
-composer require summer/wn-login-plugin
+
+```
+composer require summercms/wn-login-plugin
 ```
 
 ## 使用
