@@ -1,5 +1,5 @@
 1.0.1:
     - 'Initialize plugin.'
 2.0.1:
-    - 添加主题自定义数据表
+    - '添加主题自定义数据表'
     - builder_table_create_summer_login_skin_data.php
