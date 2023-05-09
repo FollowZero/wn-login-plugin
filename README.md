@@ -22,6 +22,9 @@
 composer require summercms/wn-login-plugin
 ```
 
+```
+php artisan winter:up
+```
 ## 使用
 后台 > 设置 > SUMMER > 登录主题
 
